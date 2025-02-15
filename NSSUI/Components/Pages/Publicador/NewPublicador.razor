@@ -1,0 +1,73 @@
+﻿@page "/new_publicador"
+@inherits NewPublicadorBase
+
+<h3>Novo Publicador</h3>
+
+<form class="form-control">
+    <div class="mb-3">
+        <label class="form-label">Nome do Publicador</label>
+        <input type="text" class="form-control" placeholder="Nome do Publicador">
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <label class="form-label">Data de Nascimento</label>
+            <input type="date" class="form-control" >
+        </div>
+        <div class="col-6">
+            <label class="form-label">Data de Batismo</label>
+            <input type="date" class="form-control">
+        </div>
+    </div>
+
+    <div class="row my-3">
+        <div class="col-3">
+            <label class="form-label">Masculino</label>
+            <input type="checkbox">
+        </div>
+
+        <div class="col-3">
+            <label class="form-label">Feminino</label>
+            <input type="checkbox">
+        </div>
+
+        <div class="col-3">
+            <label class="form-label">Outra ovelha</label>
+            <input type="checkbox">
+        </div>
+
+        <div class="col-3">
+            <label class="form-label">Ungido</label>
+            <input type="checkbox">
+        </div>
+
+        <div class="col-3">
+            <label class="form-label">Ancião</label>
+            <input type="checkbox">
+        </div>
+
+        <div class="col-3">
+            <label class="form-label">Servo ministerial</label>
+            <input type="checkbox">
+        </div>
+
+       <div class="col-3">
+            <label class="form-label">Pioneiro regular</label>
+            <input type="checkbox">
+       </div>
+
+       <div class="col-3">
+            <label class="form-label">Pioneiro especial</label>
+            <input type="checkbox">
+       </div>
+
+       <div class="col-3">
+            <label class="form-label">Missionário de campo</label>
+            <input type="checkbox">
+       </div>
+    </div>
+
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3">Adicionar Publicador</button>
+    </div>
+</form>
+

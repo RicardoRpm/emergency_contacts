@@ -2,35 +2,4 @@
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
-
-@page "/clientes"
-@using Domain.Entites
-@using Infrastruture.Contexts
-@using Microsoft.EntityFrameworkCore
-@inject AppDbContext Context
-
-<h3>Clientes no Banco</h3>
-
-@if (clientes == null)
-{
-    <p>Carregando...</p>
-}
-else
-{
-    <ul>
-        @foreach (var cliente in clientes)
-        {
-            <li>@cliente.Nome</li>
-        }
-    </ul>
-}
-
-@code {
-    private List<Publicador> clientes;
-
-    protected override async Task OnInitializedAsync()
-    {
-        clientes = await Context.Publicador.ToListAsync();
-    }
-}
+<h1>REGISTO DE PUBLICADORES NSS</h1>

@@ -1,6 +1,7 @@
+using Application.Interfaces.Repositories;
 using Infrastruture.Contexts;
+using Infrastruture.Repositories;
 using Microsoft.EntityFrameworkCore;
-using NSSUI.Components;
 
 namespace NSSUI;
 
@@ -17,6 +18,9 @@ public class Program
         // Add services to the container.
         builder.Services.AddRazorComponents()
             .AddInteractiveServerComponents();
+
+        // Dependecy Injection
+        builder.Services.AddScoped<IPublicadorRepository, PublicadorRepository>();
 
         var app = builder.Build();
 

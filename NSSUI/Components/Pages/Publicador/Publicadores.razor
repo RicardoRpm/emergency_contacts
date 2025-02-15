@@ -1,0 +1,17 @@
+﻿@page "/publicadores"
+@inherits PublicadoresBase
+<h3>Publicador</h3>
+
+@if (publicadores == null)
+{
+    <p>Carregando...</p>
+}
+else
+{
+    <ul>
+        @foreach (var cliente in publicadores)
+        {
+            <li>@cliente.Nome</li>
+        }
+    </ul>
+}
