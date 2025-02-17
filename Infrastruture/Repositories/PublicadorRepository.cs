@@ -16,9 +16,10 @@ namespace Infrastruture.Repositories
 
         public IQueryable<Publicador> Entities => throw new NotImplementedException();
 
-        public Task<Publicador> AddAsync(Publicador entity)
+        public int AddAsync(Publicador entity)
         {
-            throw new NotImplementedException();
+            _appContext.Add(entity);
+            return _appContext.SaveChanges();
         }
 
         public Task DeleteAsync(Publicador entity)

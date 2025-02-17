@@ -10,10 +10,9 @@ namespace Application.Interfaces.Repositories;
 public interface IBaseRepository<T> where T : class
 {
     IQueryable<T> Entities { get; }
-
     Task<T> GetByIdAsync(int id);
     Task<List<T>> GetAllAsync();
-    Task<T> AddAsync(T entity);
+    int AddAsync(T entity);
     Task UpdateAsync(T entity);
     Task DeleteAsync(T entity);
     
