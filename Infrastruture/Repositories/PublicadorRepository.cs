@@ -18,7 +18,7 @@ namespace Infrastruture.Repositories
 
         public int AddAsync(Publicador entity)
         {
-            _appContext.Add(entity);
+            _appContext.Publicador.Add(entity);
             return _appContext.SaveChanges();
         }
 
