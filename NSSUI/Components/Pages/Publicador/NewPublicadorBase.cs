@@ -1,4 +1,5 @@
-﻿using Application.Interfaces.Repositories;
+﻿using Application.DTOs;
+using Application.Interfaces.Services;
 using Microsoft.AspNetCore.Components;
 
 namespace NSSUI.Components.Pages.Publicador;
@@ -6,7 +7,8 @@ namespace NSSUI.Components.Pages.Publicador;
 public class NewPublicadorBase : ComponentBase
 {
     [Inject]
-    private IPublicadorRepository _publicadorRepository { get; set; }
+    private IPublicadorService _publicadorService { get; set; }
+    protected PublicadorDto publicadorDto { get; set; }
 
     protected override Task OnInitializedAsync()
     {
@@ -16,5 +18,10 @@ public class NewPublicadorBase : ComponentBase
     protected override Task OnAfterRenderAsync(bool firstRender)
     {
         return base.OnAfterRenderAsync(firstRender);
+    }
+
+    public void addPublicador()
+    {
+        _publicadorService.AddAsync(publicadorDto);
     }
 }

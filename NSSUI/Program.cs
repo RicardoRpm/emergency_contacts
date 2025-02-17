@@ -1,4 +1,9 @@
 using Application.Interfaces.Repositories;
+using Application.Interfaces.Services;
+using Application.Mappings;
+using Application.Services;
+using Application.UseCases.Publicador;
+using AutoMapper;
 using Infrastruture.Contexts;
 using Infrastruture.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -19,8 +24,21 @@ public class Program
         builder.Services.AddRazorComponents()
             .AddInteractiveServerComponents();
 
+        // Auto Mapper Configurations
+        var mappingConfig = new MapperConfiguration(mc =>
+        {
+            mc.AddProfile(new DomainToDTOMappingProfile());
+        });
+
+        IMapper mapper = mappingConfig.CreateMapper();
+        builder.Services.AddSingleton(mapper);
+
+
         // Dependecy Injection
+        builder.Services.AddScoped<IPublicadorService, PublicadorService>();
         builder.Services.AddScoped<IPublicadorRepository, PublicadorRepository>();
+        builder.Services.AddScoped<GetAllPublicadores>();
+        //builder.Services.AddScoped<IMapper>();
 
         var app = builder.Build();
 

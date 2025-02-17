@@ -1,9 +1,14 @@
-﻿using Domain.Common;
+﻿using Application.DTOs.Commons;
 using Domain.Enums;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Domain.Entites
+namespace Application.DTOs
 {
-    public class Publicador : BaseEntity
+    public class PublicadorDto : BaseDTO
     {
         public string Nome { get; set; }
         public DateTime DataDeNascimento { get; set; }
@@ -18,5 +23,5 @@ namespace Domain.Entites
         public bool PioneiroRegular { get; set; }
         public bool PioneiroEspecial { get; set; }
         public bool Missionario { get; set; }
-    }   
+    }
 }

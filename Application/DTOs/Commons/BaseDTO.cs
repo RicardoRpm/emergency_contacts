@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.UseCases
+namespace Application.DTOs.Commons
 {
-    public class AddPublicadorUseCase
+    public class BaseDTO
     {
+        public Guid ID { get; set; }
     }
 }
