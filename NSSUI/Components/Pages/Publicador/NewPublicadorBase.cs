@@ -22,6 +22,11 @@ public class NewPublicadorBase : ComponentBase
 
     public void addPublicador()
     {
-        _publicadorService.AddAsync(publicadorDto);
+        var returnValue = _publicadorService.AddAsync(publicadorDto);
+        if (returnValue == 1)
+        {
+
+        }
+
     }
 }

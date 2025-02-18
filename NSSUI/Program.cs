@@ -33,13 +33,12 @@ public class Program
         IMapper mapper = mappingConfig.CreateMapper();
         builder.Services.AddSingleton(mapper);
 
-
         // Dependecy Injection
         builder.Services.AddScoped<IPublicadorService, PublicadorService>();
         builder.Services.AddScoped<IPublicadorRepository, PublicadorRepository>();
         builder.Services.AddScoped<GetAllPublicadores>();
-        //builder.Services.AddScoped<IMapper>();
-
+        builder.Services.AddScoped<AddPublicador>();
+        
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.

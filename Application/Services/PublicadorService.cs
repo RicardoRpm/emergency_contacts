@@ -14,16 +14,18 @@ namespace Application.Services;
 public class PublicadorService : IPublicadorService
 {
     private GetAllPublicadores _getAllPublicadores;
-    public PublicadorService(GetAllPublicadores getAllPublicadores)
+    private readonly AddPublicador _addPublicador;
+    public PublicadorService(GetAllPublicadores getAllPublicadores, AddPublicador addPublicador)
     {
         _getAllPublicadores = getAllPublicadores;
+        _addPublicador = addPublicador;
     }
 
     public IQueryable<PublicadorDto> Entities => throw new NotImplementedException();
 
     public int AddAsync(PublicadorDto entity)
     {
-        throw new NotImplementedException();
+        return _addPublicador.ExecuteAsync(entity);
     }
 
     public Task DeleteAsync(PublicadorDto entity)
